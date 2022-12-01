@@ -1,0 +1,84 @@
+﻿@page
+@model SacramentMeetingPlanner.Pages.Plan.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Plan</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Plan.president" class="control-label"></label>
+                <input asp-for="Plan.president" class="form-control" />
+                <span asp-validation-for="Plan.president" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Plan.conducting" class="control-label"></label>
+                <input asp-for="Plan.conducting" class="form-control" />
+                <span asp-validation-for="Plan.conducting" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Plan.invocation" class="control-label"></label>
+                <input asp-for="Plan.invocation" class="form-control" />
+                <span asp-validation-for="Plan.invocation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Plan.sacramentHymnNumber" class="control-label"></label>
+                <input asp-for="Plan.sacramentHymnNumber" class="form-control" />
+                <span asp-validation-for="Plan.sacramentHymnNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Plan.sacramentHymnName" class="control-label"></label>
+                <input asp-for="Plan.sacramentHymnName" class="form-control" />
+                <span asp-validation-for="Plan.sacramentHymnName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Plan.special" class="control-label"></label>
+                <input asp-for="Plan.special" class="form-control" />
+                <span asp-validation-for="Plan.special" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Plan.closingHymnNumber" class="control-label"></label>
+                <input asp-for="Plan.closingHymnNumber" class="form-control" />
+                <span asp-validation-for="Plan.closingHymnNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Plan.closingHymnName" class="control-label"></label>
+                <input asp-for="Plan.closingHymnName" class="form-control" />
+                <span asp-validation-for="Plan.closingHymnName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Plan.benediction" class="control-label"></label>
+                <input asp-for="Plan.benediction" class="form-control" />
+                <span asp-validation-for="Plan.benediction" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Plan.dismissalSongNumber" class="control-label"></label>
+                <input asp-for="Plan.dismissalSongNumber" class="form-control" />
+                <span asp-validation-for="Plan.dismissalSongNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Plan.dismissalSongName" class="control-label"></label>
+                <input asp-for="Plan.dismissalSongName" class="form-control" />
+                <span asp-validation-for="Plan.dismissalSongName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

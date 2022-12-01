@@ -1,0 +1,88 @@
+﻿@page
+@model SacramentMeetingPlanner.Pages.Plan.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Plan</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Plan.president)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Plan.president)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Plan.conducting)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Plan.conducting)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Plan.invocation)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Plan.invocation)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Plan.sacramentHymnNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Plan.sacramentHymnNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Plan.sacramentHymnName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Plan.sacramentHymnName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Plan.special)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Plan.special)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Plan.closingHymnNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Plan.closingHymnNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Plan.closingHymnName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Plan.closingHymnName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Plan.benediction)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Plan.benediction)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Plan.dismissalSongNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Plan.dismissalSongNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Plan.dismissalSongName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Plan.dismissalSongName)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Plan.id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>
