@@ -1,4 +1,4 @@
-﻿@page
+@page
 @model SacramentMeetingPlanner.Pages.SpeakerPage.EditModel
 
 @{
@@ -23,6 +23,11 @@
                 <label asp-for="Speaker.name" class="control-label"></label>
                 <input asp-for="Speaker.name" class="form-control" />
                 <span asp-validation-for="Speaker.name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Speaker.Date" class="control-label"></label>
+                <input asp-for="Speaker.Date" class="form-control" />
+                <span asp-validation-for="Speaker.Date" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Speaker.planId" class="control-label"></label>

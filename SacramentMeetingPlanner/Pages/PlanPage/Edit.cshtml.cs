@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -71,7 +71,7 @@ namespace SacramentMeetingPlanner.Pages.PlanPage
 
         private bool PlanExists(int id)
         {
-          return _context.Plan.Any(e => e.id == id);
+          return (_context.Plan?.Any(e => e.id == id)).GetValueOrDefault();
         }
     }
 }

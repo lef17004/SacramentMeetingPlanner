@@ -3,6 +3,7 @@
     public class Plan
     {
         public int id { get; set; }
+        public DateOnly Date { get; set; }
         public string president { get; set; }
         public string conducting { get; set; }
         public string invocation { get; set; }

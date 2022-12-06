@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -20,7 +20,7 @@ namespace SacramentMeetingPlanner.Pages.SpeakerPage
         }
 
         [BindProperty]
-      public Speaker Speaker { get; set; }
+      public Speaker Speaker { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {

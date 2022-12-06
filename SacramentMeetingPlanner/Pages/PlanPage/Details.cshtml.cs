@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -19,7 +19,7 @@ namespace SacramentMeetingPlanner.Pages.PlanPage
             _context = context;
         }
 
-      public Plan Plan { get; set; }
+      public Plan Plan { get; set; } = default!; 
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {

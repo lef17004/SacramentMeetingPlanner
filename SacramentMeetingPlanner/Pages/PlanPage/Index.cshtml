@@ -1,4 +1,4 @@
-﻿@page
+@page
 @model SacramentMeetingPlanner.Pages.PlanPage.IndexModel
 
 @{
@@ -13,6 +13,9 @@
 <table class="table">
     <thead>
         <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Plan[0].Date)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Plan[0].president)
             </th>
@@ -52,6 +55,9 @@
     <tbody>
 @foreach (var item in Model.Plan) {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.president)
             </td>

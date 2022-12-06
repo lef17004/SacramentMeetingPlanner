@@ -1,4 +1,4 @@
-﻿@page
+@page
 @model SacramentMeetingPlanner.Pages.SpeakerPage.IndexModel
 
 @{
@@ -20,6 +20,9 @@
                 @Html.DisplayNameFor(model => model.Speaker[0].name)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Speaker[0].Date)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Speaker[0].planId)
             </th>
             <th></th>
@@ -33,6 +36,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.planId)

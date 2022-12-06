@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -25,13 +25,13 @@ namespace SacramentMeetingPlanner.Pages.SpeakerPage
         }
 
         [BindProperty]
-        public Speaker Speaker { get; set; }
+        public Speaker Speaker { get; set; } = default!;
         
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-          if (!ModelState.IsValid)
+          if (!ModelState.IsValid || _context.Speaker == null || Speaker == null)
             {
                 return Page();
             }
