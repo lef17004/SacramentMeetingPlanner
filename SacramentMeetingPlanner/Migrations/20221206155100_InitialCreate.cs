@@ -39,31 +39,21 @@ namespace SacramentMeetingPlanner.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     type = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Planid = table.Column<int>(type: "int", nullable: true)
+                    planId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Speaker", x => x.id);
-                    table.ForeignKey(
-                        name: "FK_Speaker_Plan_Planid",
-                        column: x => x.Planid,
-                        principalTable: "Plan",
-                        principalColumn: "id");
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Speaker_Planid",
-                table: "Speaker",
-                column: "Planid");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Speaker");
+                name: "Plan");
 
             migrationBuilder.DropTable(
-                name: "Plan");
+                name: "Speaker");
         }
     }
 }

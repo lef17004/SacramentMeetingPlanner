@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using SacramentMeetingPlanner.Data;
 using SacramentMeetingPlanner.Models;
 
-namespace SacramentMeetingPlanner.Pages.Plan
+namespace SacramentMeetingPlanner.Pages.PlanPage
 {
     public class DeleteModel : PageModel
     {
@@ -20,7 +20,7 @@ namespace SacramentMeetingPlanner.Pages.Plan
         }
 
         [BindProperty]
-      public Models.Plan Plan { get; set; }
+      public Plan Plan { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {

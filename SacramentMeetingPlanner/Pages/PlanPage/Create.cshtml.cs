@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using SacramentMeetingPlanner.Data;
 using SacramentMeetingPlanner.Models;
 
-namespace SacramentMeetingPlanner.Pages.Speaker
+namespace SacramentMeetingPlanner.Pages.PlanPage
 {
     public class CreateModel : PageModel
     {
@@ -25,7 +25,7 @@ namespace SacramentMeetingPlanner.Pages.Speaker
         }
 
         [BindProperty]
-        public Models.Speaker Speaker { get; set; }
+        public Plan Plan { get; set; }
         
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
@@ -36,7 +36,7 @@ namespace SacramentMeetingPlanner.Pages.Speaker
                 return Page();
             }
 
-            _context.Speaker.Add(Speaker);
+            _context.Plan.Add(Plan);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

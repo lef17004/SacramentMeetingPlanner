@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using SacramentMeetingPlanner.Data;
 using SacramentMeetingPlanner.Models;
 
-namespace SacramentMeetingPlanner.Pages.Speaker
+namespace SacramentMeetingPlanner.Pages.PlanPage
 {
     public class EditModel : PageModel
     {
@@ -21,21 +21,21 @@ namespace SacramentMeetingPlanner.Pages.Speaker
         }
 
         [BindProperty]
-        public Models.Speaker Speaker { get; set; } = default!;
+        public Plan Plan { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.Speaker == null)
+            if (id == null || _context.Plan == null)
             {
                 return NotFound();
             }
 
-            var speaker =  await _context.Speaker.FirstOrDefaultAsync(m => m.id == id);
-            if (speaker == null)
+            var plan =  await _context.Plan.FirstOrDefaultAsync(m => m.id == id);
+            if (plan == null)
             {
                 return NotFound();
             }
-            Speaker = speaker;
+            Plan = plan;
             return Page();
         }
 
@@ -48,7 +48,7 @@ namespace SacramentMeetingPlanner.Pages.Speaker
                 return Page();
             }
 
-            _context.Attach(Speaker).State = EntityState.Modified;
+            _context.Attach(Plan).State = EntityState.Modified;
 
             try
             {
@@ -56,7 +56,7 @@ namespace SacramentMeetingPlanner.Pages.Speaker
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!SpeakerExists(Speaker.id))
+                if (!PlanExists(Plan.id))
                 {
                     return NotFound();
                 }
@@ -69,9 +69,9 @@ namespace SacramentMeetingPlanner.Pages.Speaker
             return RedirectToPage("./Index");
         }
 
-        private bool SpeakerExists(int id)
+        private bool PlanExists(int id)
         {
-          return _context.Speaker.Any(e => e.id == id);
+          return _context.Plan.Any(e => e.id == id);
         }
     }
 }

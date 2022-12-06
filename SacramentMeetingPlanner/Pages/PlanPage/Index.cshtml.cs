@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using SacramentMeetingPlanner.Data;
 using SacramentMeetingPlanner.Models;
 
-namespace SacramentMeetingPlanner.Pages.Speaker
+namespace SacramentMeetingPlanner.Pages.PlanPage
 {
     public class IndexModel : PageModel
     {
@@ -19,13 +19,13 @@ namespace SacramentMeetingPlanner.Pages.Speaker
             _context = context;
         }
 
-        public IList<Models.Speaker> Speaker { get;set; } = default!;
+        public IList<Plan> Plan { get;set; } = default!;
 
         public async Task OnGetAsync()
         {
-            if (_context.Speaker != null)
+            if (_context.Plan != null)
             {
-                Speaker = await _context.Speaker.ToListAsync();
+                Plan = await _context.Plan.ToListAsync();
             }
         }
     }

@@ -1,5 +1,5 @@
 ﻿@page
-@model SacramentMeetingPlanner.Pages.Speaker.DeleteModel
+@model SacramentMeetingPlanner.Pages.SpeakerPage.DeleteModel
 
 @{
     ViewData["Title"] = "Delete";
@@ -23,6 +23,12 @@
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Speaker.name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Speaker.planId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Speaker.planId)
         </dd>
     </dl>
     

@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using SacramentMeetingPlanner.Data;
 using SacramentMeetingPlanner.Models;
 
-namespace SacramentMeetingPlanner.Pages.Speaker
+namespace SacramentMeetingPlanner.Pages.SpeakerPage
 {
     public class DeleteModel : PageModel
     {
@@ -20,7 +20,7 @@ namespace SacramentMeetingPlanner.Pages.Speaker
         }
 
         [BindProperty]
-      public Models.Speaker Speaker { get; set; }
+      public Speaker Speaker { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {

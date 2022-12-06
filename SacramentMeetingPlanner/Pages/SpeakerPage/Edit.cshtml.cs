@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using SacramentMeetingPlanner.Data;
 using SacramentMeetingPlanner.Models;
 
-namespace SacramentMeetingPlanner.Pages.Plan
+namespace SacramentMeetingPlanner.Pages.SpeakerPage
 {
     public class EditModel : PageModel
     {
@@ -21,21 +21,21 @@ namespace SacramentMeetingPlanner.Pages.Plan
         }
 
         [BindProperty]
-        public Models.Plan Plan { get; set; } = default!;
+        public Speaker Speaker { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.Plan == null)
+            if (id == null || _context.Speaker == null)
             {
                 return NotFound();
             }
 
-            var plan =  await _context.Plan.FirstOrDefaultAsync(m => m.id == id);
-            if (plan == null)
+            var speaker =  await _context.Speaker.FirstOrDefaultAsync(m => m.id == id);
+            if (speaker == null)
             {
                 return NotFound();
             }
-            Plan = plan;
+            Speaker = speaker;
             return Page();
         }
 
@@ -48,7 +48,7 @@ namespace SacramentMeetingPlanner.Pages.Plan
                 return Page();
             }
 
-            _context.Attach(Plan).State = EntityState.Modified;
+            _context.Attach(Speaker).State = EntityState.Modified;
 
             try
             {
@@ -56,7 +56,7 @@ namespace SacramentMeetingPlanner.Pages.Plan
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!PlanExists(Plan.id))
+                if (!SpeakerExists(Speaker.id))
                 {
                     return NotFound();
                 }
@@ -69,9 +69,9 @@ namespace SacramentMeetingPlanner.Pages.Plan
             return RedirectToPage("./Index");
         }
 
-        private bool PlanExists(int id)
+        private bool SpeakerExists(int id)
         {
-          return _context.Plan.Any(e => e.id == id);
+          return _context.Speaker.Any(e => e.id == id);
         }
     }
 }
