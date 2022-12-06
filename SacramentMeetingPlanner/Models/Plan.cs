@@ -7,9 +7,7 @@
         public string conducting { get; set; }
         public string invocation { get; set; }
         public string sacramentHymnNumber { get; set; }
-
         public string sacramentHymnName { get; set; }
-        public List<Models.Speaker> Speakers { get; set; }
         public string special { get; set; }
         public string closingHymnNumber { get; set; }
         public string closingHymnName { get; set; }
